@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.10)
+project(key)
+set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+include_directories(${PROJECT_SOURCE_DIR}/../include)
+add_executable(key key.cxx)
+add_executable(writer writer.cxx)
