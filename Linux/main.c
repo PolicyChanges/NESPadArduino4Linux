@@ -105,43 +105,51 @@ int main()
 		//printf("Char: %c\n",input);	
 		
 		switch(input) {
-		/*	case 'A': libevdev_uinput_write_event(uidev, EV_KEY, KEY_X, 1);break;
-			case 'B': libevdev_uinput_write_event(uidev, EV_KEY, KEY_Z, 1);break;
-			case 'E': libevdev_uinput_write_event(uidev, EV_KEY, KEY_ESC, 1);break;
-			case 'S': libevdev_uinput_write_event(uidev, EV_KEY, KEY_ENTER, 1);break;
-			case 'U': libevdev_uinput_write_event(uidev, EV_KEY, KEY_UP, 1);break;
-			case 'D': libevdev_uinput_write_event(uidev, EV_KEY, KEY_DOWN, 1);break;
-			case 'L': libevdev_uinput_write_event(uidev, EV_KEY, KEY_LEFT, 1);break;
-			case 'R': libevdev_uinput_write_event(uidev, EV_KEY, KEY_RIGHT, 1);break;
 
-			case '0': libevdev_uinput_write_event(uidev, EV_KEY, KEY_X, 0);break;
-			case '1': libevdev_uinput_write_event(uidev, EV_KEY, KEY_Z, 0);break;
-			case '7': libevdev_uinput_write_event(uidev, EV_KEY, KEY_ESC, 0);break;
-			case '6': libevdev_uinput_write_event(uidev, EV_KEY, KEY_ENTER, 0);break;
-			case '2': libevdev_uinput_write_event(uidev, EV_KEY, KEY_UP, 0);break;
-			case '3': libevdev_uinput_write_event(uidev, EV_KEY, KEY_DOWN, 0);break;
-			case '4': libevdev_uinput_write_event(uidev, EV_KEY, KEY_LEFT, 0);break;
-			case '5': libevdev_uinput_write_event(uidev, EV_KEY, KEY_RIGHT, 0);break;
-			*/	
-	/*case 'A': printf("A pressed\n");break;
-case 'B': printf("B pressed\n");break;
+			/*
+			case 'A': printf("A pressed\n");break;
+			case 'B': printf("B pressed\n");break;
+			case 'E': printf("E pressed\n");break;
+			case 'S': printf("S pressed\n");break;
+			case 'U': printf("U pressed\n");break;
+			case 'D': printf("D pressed\n");break;
+			case 'L': printf("L pressed\n");break;
+			case 'R': printf("R pressed\n");break;
 
-case 'E': printf("E pressed\n");break;
-case 'S': printf("S pressed\n");break;
-case 'U': printf("U pressed\n");break;
-case 'D': printf("D pressed\n");break;
-case 'L': printf("L pressed\n");break;
-case 'R': printf("R pressed\n");break;
-
-case '0': printf("A Released\n");break;
-case '1': printf("B Released\n");break;
-case '7': printf("E Released\n");break;
-case '6': printf("S Released\n");break;
-case '2': printf("U Released\n");break;
-case '3': printf("D Released\n");break;
-case '4': printf("L Released\n");break;
-case '5': printf("R Released\n");break;*/
+			case '0': printf("A Released\n");break;
+			case '1': printf("B Released\n");break;
+			case '7': printf("E Released\n");break;
+			case '6': printf("S Released\n");break;
+			case '2': printf("U Released\n");break;
+			case '3': printf("D Released\n");break;
+			case '4': printf("L Released\n");break;
+			case '5': printf("R Released\n");break;
+			*/
+			
+			case 'A': writer(KEY_X, WonderRabbitProject::key::writer_t::state_t::down); break;
+			case '0': writer(KEY_X, WonderRabbitProject::key::writer_t::state_t::up); break;
 				
+			case 'B': writer(KEY_Z, WonderRabbitProject::key::writer_t::state_t::down); break;
+			case '1': writer(KEY_Z, WonderRabbitProject::key::writer_t::state_t::up); break;
+			
+			//case 'E': writer(KEY_ESC, WonderRabbitProject::key::writer_t:state::down); printf("E pressed\n");break;
+			//case '7': writer(KEY_ESC, WonderRabbitProject::key::writer_t:state::down); printf("E pressed\n");break;
+			
+			case 'S': writer(KEY_ENTER, WonderRabbitProject::key::writer_t::state_t::down); break;
+			case '6': writer(KEY_ENTER, WonderRabbitProject::key::writer_t::state_t::up); break;
+			
+			case 'U': writer(KEY_UP, WonderRabbitProject::key::writer_t::state_t::down); break;
+			case '2': writer(KEY_UP, WonderRabbitProject::key::writer_t::state_t::up);	 break;
+			
+			case 'D': writer(KEY_DOWN, WonderRabbitProject::key::writer_t::state_t::down); break;
+			case '3': writer(KEY_DOWN, WonderRabbitProject::key::writer_t::state_t::up); break;
+			
+			case 'L': writer(KEY_LEFT, WonderRabbitProject::key::writer_t::state_t::down); break;
+			case '4': writer(KEY_LEFT, WonderRabbitProject::key::writer_t::state_t::up); break;
+			
+			case 'R': writer(KEY_RIGHT, WonderRabbitProject::key::writer_t::state_t::down); break;
+			case '5': writer(KEY_RIGHT, WonderRabbitProject::key::writer_t::state_t::up); break;
+			/*
 			
 			case 'A': writer("x", WonderRabbitProject::key::writer_t::state_t::down); break;
 			case 'B': writer("z", WonderRabbitProject::key::writer_t::state_t::down); break;
@@ -160,25 +168,9 @@ case '5': printf("R Released\n");break;*/
 			case '3': writer("down", WonderRabbitProject::key::writer_t::state_t::up); break;
 			case '4': writer("left", WonderRabbitProject::key::writer_t::state_t::up); break;
 			case '5': writer("right", WonderRabbitProject::key::writer_t::state_t::up); break;
+*/
 
-				/*
-			case 'A': XTestFakeKeyEvent(display, key_mappings[0], True, CurrentTime); printf("A pressed: %d\n",display);break;
-			case 'B': XTestFakeKeyEvent(display, key_mappings[1], True, CurrentTime); printf("B pressed\n");break;
-			case 'E': XTestFakeKeyEvent(display, key_mappings[2], True, CurrentTime); break;
-			case 'S': XTestFakeKeyEvent(display, key_mappings[3], True, CurrentTime); break;
-			case 'U': XTestFakeKeyEvent(display, key_mappings[4], True, CurrentTime); break;
-			case 'D': XTestFakeKeyEvent(display, key_mappings[5], True, CurrentTime); break;
-			case 'L': XTestFakeKeyEvent(display, key_mappings[6], True, CurrentTime); break;
-			case 'R': XTestFakeKeyEvent(display, key_mappings[7], True, CurrentTime); break;
-				
-			case '0': XTestFakeKeyEvent(display, key_mappings[0], False, CurrentTime); printf("A Released\n");break;
-			case '1': XTestFakeKeyEvent(display, key_mappings[1], False, CurrentTime); printf("B Released\n");break;
-			case '7': XTestFakeKeyEvent(display, key_mappings[2], False, CurrentTime); break;
-			case '6': XTestFakeKeyEvent(display, key_mappings[3], False, CurrentTime); break;
-			case '2': XTestFakeKeyEvent(display, key_mappings[4], False, CurrentTime); break;
-			case '3': XTestFakeKeyEvent(display, key_mappings[5], False, CurrentTime); break;
-			case '4': XTestFakeKeyEvent(display, key_mappings[6], False, CurrentTime); break;
-			case '5': XTestFakeKeyEvent(display, key_mappings[7], False, CurrentTime); break;*/
+
 			//default:break;
 		}
 		//sleep(1);
